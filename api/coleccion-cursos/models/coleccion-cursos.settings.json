@@ -1,0 +1,47 @@
+{
+  "kind": "collectionType",
+  "collectionName": "coleccion_cursos",
+  "info": {
+    "name": "coleccionCursos",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nombre": {
+      "type": "string"
+    },
+    "descripcion": {
+      "type": "text"
+    },
+    "imagen": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "inicio": {
+      "type": "date",
+      "required": true
+    },
+    "fin": {
+      "type": "date"
+    },
+    "url": {
+      "type": "uid",
+      "targetField": "nombre"
+    },
+    "precio": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
